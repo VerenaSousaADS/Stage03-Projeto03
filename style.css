@@ -13,6 +13,8 @@
     --bg-primary: hsl(var(--hue), 22%, 20%);
     --fc-primary: hsl(var(--hue), 0%, 100%);
     --fc-secondary: hsl(var(--hue), 50%, 80%);
+    --fc-secondary-dark: hsl(var(--hue), 100%, 11%);
+
 
     font-size: 62.5%;
 
@@ -31,6 +33,8 @@ body{
     max-width: 33rem;
     margin: 0 auto;
 }
+
+
 
 img{
     width: 100%;
@@ -61,4 +65,52 @@ header h1{
 
     font-weight: 800;
 
+}
+ 
+main{
+    display: grid;
+    gap: 3.2rem;
+}
+
+/* o position absolute dentro dele será relativo ao cartão */
+.card{
+    position: relative;
+}
+
+.card img{
+    height: 41.6rem;
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+.card h2{
+    position: absolute;
+    bottom: 5.2rem;
+    left: 2.8rem;
+    font-size: var(--fs-heading);
+    font-weight: 800;
+
+    /* Para realizar a quebra de linha */
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.card h2 span{
+    border-radius: 2rem;
+    font-size: var(--fs-body);
+    font-weight: 400;
+    background-color: var(--fc-primary);
+    color: var(--fc-secondary-dark);
+
+    padding: 0 1.6rem;
+    /* o width se alinha ao conteúdo */
+    width: fit-content;
+    height: 3.8rem;
+
+    /* Usamos essa propriedade pois o span é um display block e não permite usar propriedades como height. Porém com o display: inline-flex essa propriedade é destravada e permite ainda que se utilize o align-itens para centralização dos itens */
+
+    display: inline-flex;
+    align-items: center;
 }
