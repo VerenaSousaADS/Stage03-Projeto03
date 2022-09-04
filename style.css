@@ -121,3 +121,48 @@ main{
     display: inline-flex;
     align-items: center;
 }
+
+/* Qual tag receberá a animação */
+
+header{
+    animation: topdown 700ms;
+    
+
+}
+
+/* o Primeiro tempo é o time da animação no geral, o segundo é o delay */
+
+main{
+    animation: downtop 700ms 350ms backwards;
+}
+
+/* A animação sempre volta para o estado original da tag, nesse caso a tag header volta ao seu estado original, a não ser que seja especificado que termine em outro ponto da timeline da animação */
+
+@keyframes topdown{
+    0%{
+        opacity: 0;
+        /* Significa que a página vai subir o eixo  Y (de cima para baixo, como puxar uma corda) */
+        transform: translateY(-15px);
+    }
+
+
+    100%{
+        opacity: 1;
+        /* Signfica que a página vai voltar para posição original */
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes downtop{
+    0%{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
